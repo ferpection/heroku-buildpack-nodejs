@@ -222,7 +222,7 @@ npm_prune_devdependencies() {
     return 0
   else
     cd "$build_dir" || return
-    monitor "npm-prune" npm prune --userconfig "$build_dir/.npmrc" 2>&1
+    monitor "npm-prune" npm prune --verbose --userconfig "$build_dir/.npmrc" 2>&1
     meta_set "skipped-prune" "false"
   fi
 }
